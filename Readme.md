@@ -1,12 +1,12 @@
-# CRUD API using node, Sequelize, Postgres and Docker
+# API using node, Postgres, Sequelize, and Docker
 
-Navigate where the docker-compose.yml is located and build the image (you can customize your image name in the docker-compose.yml file)
+Navigate to root (where the docker-compose.yml is located) and build the image
 
 ```
 docker-compose build
 ```
 
-To run the db:
+To run the database:
 
 ```
 docker-compose up -d nb_db
@@ -15,5 +15,11 @@ docker-compose up -d nb_db
 To run the backend
 
 ```
-docker-compose up -d nb_backend
+docker-compose up -d doc_container_2
+```
+
+To run database and backend
+
+```
+docker-compose up
 ```
