@@ -23,3 +23,5 @@ To run database and backend
 ```
 docker-compose up
 ```
+
+Backend runs on [http://localhost:3001](http://localhost:3001).
