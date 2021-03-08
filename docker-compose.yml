@@ -1,0 +1,30 @@
+version: "3.8"
+services:
+  doc_container_2:
+    container_name: doc_container_2
+    image: doc_container_2_template
+    build:
+      context: .
+    ports:
+      - "3001:3001"
+    environment:
+      - EXTERNAL_PORT=3001
+      - PGUSER=nb_user
+      - PGPASSWORD=12345
+      - PGDATABASE=nb_database
+      - PGHOST=nb_db # NAME OF THE SERVICE
+    depends_on:
+      - nb_db
+  nb_db:
+    container_name: nb_db
+    image: "postgres:12"
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=nb_user
+      - POSTGRES_PASSWORD=12345
+      - POSTGRES_DB=nb_database
+    volumes:
+      - nb_data:/var/lib/postgresql/data
+volumes:
+  nb_data: {}
